@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @apply bg-[#f1f1f1] h-screen flex justify-center items-center font-sans;
+}
+
+.container {
+    @apply relative w-[600px] bg-[#363636] p-6 rounded-2xl flex flex-col justify-center items-center;
+    margin-left: -290px;
+}
+ 
+.container .disk {
+    @apply w-52 h-52 flex justify-center items-center relative mb-5;
+}
+
+.container .disk .cover {
+    @apply w-full h-full bg-cover bg-center border-4 border-[#EAEFF2] rounded-full shadow-md transition-all;
+}
+
+.song-info {
+    @apply mt-5 w-full; /* Garante que o texto ocupe toda a largura */
+}
+
+.song-info .song-name, .song-info .artist-name {
+    @apply text-left text-[#EAEFF2]; /* Alinha o texto à esquerda e mantém a cor */
+}
+
+.container .progress-bar {
+    @apply w-full bg-[#6d6d6d] rounded-full cursor-pointer h-1.5 relative mb-1;
+}
+
+.container .progress-bar .fill-bar {
+    @apply w-0 h-full rounded-full bg-[#DF2F31] transition-all;
+}
+
+.container .song-time {
+    @apply flex justify-between text-sm text-[#ffffff] w-full mb-0;
+}
+
+.container .controls {
+    @apply flex items-center justify-center gap-4;
+}
+
+.control-btn {
+    @apply cursor-pointer text-white transition-colors p-2.5 rounded-full flex justify-center items-center;
+}
+
+.play-btn {
+    @apply bg-[#363636];
+}
+
+.play-btn:hover {
+    @apply bg-white bg-opacity-10;
+}
+
+.previous-btn:hover, .next-btn:hover {
+    @apply bg-white bg-opacity-10;
+}
+
+.volume-control {
+    @apply flex items-center ml-2; /* Ajuste o espaço ao lado do botão de volume */
+}
+
+.volume-slider {
+    @apply ml-2 w-24;
+}
+
+.sidebar {
+    @apply w-72 bg-[#e9e9e9] p-4 fixed right-0 top-0 h-full overflow-y-auto;
+}
+
+.sidebar h3 {
+    @apply text-xl mb-4 text-[#EAEFF2];
+}
+
+#playlist {
+    @apply list-none p-0;
+}
+
+#playlist li {
+    @apply p-2.5 mb-2.5 rounded text-[#363636] cursor-pointer transition-colors flex flex-col items-start;
+}
+
+#playlist li:hover {
+    @apply bg-[#d4d4d4];
+}
+
+#playlist li.active {
+    @apply bg-[#d4d4d4];
+}
+
+.song-name {
+    @apply font-semibold text-lg;
+}
+
+.song-artist {
+    @apply text-base text-[#363636];
+}
+
+.logo-container {
+    @apply absolute top-4 left-4; /* Para posicionar a logo no canto superior esquerdo */
+    z-index: 10; /* Para garantir que a logo fique acima de outros elementos */
+}
+
+.logo-container img {
+    @apply w-[180px]; /* Diminui o tamanho da logo */
+}
+
